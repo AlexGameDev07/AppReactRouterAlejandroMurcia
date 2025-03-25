@@ -32,7 +32,7 @@ const Nav = () => {
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="/info-card">
-                                Card con InfoCard
+                                Card con Info
                             </a>
                         </li>
                         <li className="nav-item">
