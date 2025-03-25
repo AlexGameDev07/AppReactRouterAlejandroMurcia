@@ -1,5 +1,5 @@
 import Accordion from '../components/BootstrapComponents/accordion.jsx';
-import Alert from '../components/BootstrapComponents/alert.js';
+import Alert from '../components/BootstrapComponents/alert.jsx';
 import BtnGroup from '../components/BootstrapComponents/btnGroup.jsx';
 import BtnSuccess from '../components/BootstrapComponents/btnSuccess.jsx';
 import Card from '../components/BootstrapComponents/card.jsx';
