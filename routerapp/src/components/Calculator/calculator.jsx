@@ -3,37 +3,44 @@ import './Calculator.css';
 
 const Calculator = () => {
     const [calculator, setCalculator] = useState({
-        num1: 0,
-        num2: 0,
-        result: 0
+        num1: '',
+        num2: '',
+        result: ''
     });
 
+    const limpiar = () => {
+        setCalculator({ num1: '', num2: '', result: '' });
+    };
+
     return (
-        <div className="calculator-container">
-            <h1>Calculadora</h1>
+        <div className="container">
+            <h1 className="title">Calculadora</h1>
             <input
-                id="num1"
                 type="number"
                 placeholder="Enter first number"
+                value={calculator.num1}
                 onChange={(e) =>
-                    setCalculator({ ...calculator, num1: parseInt(e.target.value) })
+                    setCalculator({ ...calculator, num1: e.target.value })
                 }
+                className="input"
             />
             <input
-                id="num2"
                 type="number"
                 placeholder="Enter second number"
+                value={calculator.num2}
                 onChange={(e) =>
-                    setCalculator({ ...calculator, num2: parseInt(e.target.value) })
+                    setCalculator({ ...calculator, num2: e.target.value })
                 }
+                className="input"
             />
             <button
                 onClick={() =>
                     setCalculator({
                         ...calculator,
-                        result: calculator.num1 + calculator.num2
+                        result: parseFloat(calculator.num1) + parseFloat(calculator.num2)
                     })
                 }
+                className="button"
             >
                 Sumar
             </button>
@@ -41,9 +48,10 @@ const Calculator = () => {
                 onClick={() =>
                     setCalculator({
                         ...calculator,
-                        result: calculator.num1 - calculator.num2
+                        result: parseFloat(calculator.num1) - parseFloat(calculator.num2)
                     })
                 }
+                className="button"
             >
                 Restar
             </button>
@@ -51,9 +59,10 @@ const Calculator = () => {
                 onClick={() =>
                     setCalculator({
                         ...calculator,
-                        result: calculator.num1 * calculator.num2
+                        result: parseFloat(calculator.num1) * parseFloat(calculator.num2)
                     })
                 }
+                className="button"
             >
                 Multiplicar
             </button>
@@ -62,34 +71,21 @@ const Calculator = () => {
                     setCalculator({
                         ...calculator,
                         result:
-                            calculator.num2 !== 0
-                                ? calculator.num1 / calculator.num2
+                            parseFloat(calculator.num2) !== 0
+                                ? parseFloat(calculator.num1) / parseFloat(calculator.num2)
                                 : 'Error'
-                        
                     })
                 }
+                className="button"
             >
                 Dividir
             </button>
-            <p>
-                Result:{' '}
-                {
-                    calculator.result
-                }
-            </p>
-
-            <button
-                onClick={limpiar
-                }
-            >
+            <p>Resultado: {calculator.result}</p>
+            <button onClick={limpiar} className="button">
                 Limpiar
             </button>
         </div>
     );
 };
 
-function limpiar(){
-    document.getElementById("num1").value = "";
-    document.getElementById("num2").value = "";
-}
 export default Calculator;

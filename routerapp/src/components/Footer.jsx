@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router'; // Cambié 'react-router' a 'react-router-dom'
 
 function Footer() {
     return (
-        <footer style={{ padding: '1rem', textAlign: 'center' }}>
+        <footer className="footer">
             <nav>
-                <ul style={{ listStyle: 'none', padding: 0, display: 'flex', justifyContent: 'center', gap: '1rem' }}>
+                <ul className="footer-links">
                     <li><Link to="/">Inicio</Link></li>
                     <li><Link to="/bootstrap">Bootstrap</Link></li>
                     <li><Link to="/calculator">Calculadora</Link></li>
@@ -14,7 +14,7 @@ function Footer() {
                     <li><Link to="/todo-list">Todo List</Link></li>
                 </ul>
             </nav>
-            <p style={{ marginTop: '1rem' }}>© 2025 Alejandro Murcia. Ningún Izquierdo Reservado.</p>
+            <p className="footer-text">© 2025 Alejandro Murcia. Ningún Izquierdo Reservado.</p>
         </footer>
     );
 }

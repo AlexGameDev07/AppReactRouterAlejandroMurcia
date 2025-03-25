@@ -1,3 +1,4 @@
+import React from "react";
 function callAcord() {
    return (
       <div class="accordion accordion-flush" id="accordionFlushExample">

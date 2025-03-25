@@ -1,6 +1,6 @@
 import React from "react";
 
-import studentList from "../components/StudentsList/estudentslist"
+import StudentList from "../components/StudentsList/estudentslist"
 
 const StudentsForm = () => {
     return (
