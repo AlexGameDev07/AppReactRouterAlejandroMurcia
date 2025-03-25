@@ -1,0 +1,141 @@
+/* Estilo general */
+/* Fondo animado */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1e1e2f, #3a3a5f, #6c63ff);
+    background-size: 400% 400%; /* Aumenta el tamaño del fondo para un efecto más dinámico */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    color: #f5f5f5;
+    animation: backgroundAnimation 12s ease-in-out infinite; /* Ajusta la duración y suavidad */
+}
+
+/* Animación del fondo */
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Fondo temporal al agregar un estudiante */
+body.success-background {
+    background: linear-gradient(135deg, #1e1e2f, #3a5f3a, #6c63ff); /* Verde armonioso */
+    animation: none; /* Pausa la animación mientras está activa */
+    transition: background 0.5s ease-in-out; /* Transición suave */
+}
+
+/* Contenedor principal */
+.container {
+    background: rgba(40, 40, 60, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    width: 400px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Título */
+.title {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Formulario */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input {
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    font-size: 16px;
+    background: #2a2a40;
+    color: #f5f5f5;
+    transition: all 0.3s ease;
+}
+
+.input:focus {
+    border-color: #6c63ff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(108, 99, 255, 0.5);
+}
+
+.button {
+    padding: 10px;
+    background: #6c63ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.button:hover {
+    background: #574bff;
+    transform: scale(1.05);
+}
+
+/* Lista de estudiantes */
+.student-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.student-item {
+    background: rgba(108, 99, 255, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    animation: bounceIn 0.6s ease;
+    color: #ffffff;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(1.1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
